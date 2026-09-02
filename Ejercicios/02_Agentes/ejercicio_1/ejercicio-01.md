@@ -1,0 +1,9 @@
+# Ejercicio 01 — Aplicaciones de IA que uso o he usado
+
+Reporte de resultados
+
+En la configuración diseñada, el agente basado en utilidad fue el único que logró obtener el oro y regresar a la salida. Terminó después de 40 pasos con un puntaje de 950, lo que demuestra que encontró una ruta segura y cumplió el objetivo. En cambio, los agentes de reflejo simple y basado en modelo alcanzaron el límite de 200 pasos sin obtener el oro, ambos con un puntaje de -200. El agente basado en metas tampoco consiguió el oro y terminó con -210 puntos, mientras que el agente de aprendizaje decidió salir inmediatamente, después de un solo paso, sin conseguir el oro y con un puntaje de -1.
+
+El agente de reflejo simple falla en este mapa porque toma sus decisiones únicamente a partir de la percepción actual y no mantiene información sobre las casillas que ya visitó o sobre la estructura del mundo. Esto puede hacer que repita acciones o permanezca recorriendo zonas sin avanzar hacia el oro. En un mapa diferente podría tener suerte si sus reglas locales lo llevan accidentalmente por el camino correcto, pero no puede planificarlo.
+
+En el caso del agente basado en modelo, la posición de los pits influye directamente en su comportamiento. Un pit genera brisa en las casillas vecinas, por lo que acercarlo a la posición inicial hace que el agente detecte peligro desde los primeros movimientos y sea más conservador al explorar. Esto puede provocar que descarte rutas o incluso quede atrapado sin encontrar una alternativa segura. Si el pit se aleja del inicio, el agente puede explorar más casillas sin percibir peligro, construir un modelo más completo del entorno y tener mayores posibilidades de encontrar una ruta hacia el oro.
